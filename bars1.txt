@@ -1,0 +1,6 @@
+﻿[Info]: [String] : Hello
+[Warning] : [String] : Stop
+[Error] : [String] : Ex. Unknown exception
+[Info]: [Byte] : Hello, hello!!!
+[Warning] : [Byte] : Stop!!!
+[Error] : [Byte] : Ex. Unknown exception

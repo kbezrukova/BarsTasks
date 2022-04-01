@@ -17,19 +17,19 @@ namespace Барс2
                     new Entity { Id = 4, ParentId = 2, Name = "Child of 2 entity"},
                     new Entity { Id = 5, ParentId = 4, Name = "Child of 4 entity"}
                 };
-            Method(list);     
+            var dict=Method(list);
+            foreach (KeyValuePair<int, Entity> kvp in dict)
+            {
+                Console.WriteLine(kvp.Key + " Name : " + kvp.Value.Name + ", Id: " + kvp.Value.Id);
+            }
+
         }
-        public static void Method(List<Entity> list)
+        public static Dictionary<int, Entity> Method(List<Entity> list)
             {               
                 Dictionary<int, Entity> dictionary = list.ToDictionary(p =>p.ParentId);
-                foreach (KeyValuePair<int, Entity> kvp in dictionary)
-                {
-                    Console.WriteLine(
-                        "Key {0}: {1}, {2} pounds",
-                        kvp.Key,
-                        kvp.Value.Id);
-                }
-            }
+                return dictionary;            
+        }
+        
     }
     class Entity
     {
